@@ -1,5 +1,12 @@
 # Selenium WebDriver TestNG Framework
+**Overview**
+This project is a Selenium TestNG framework designed for testing the New York Times website. It includes:
 
+-ExtentReports for detailed test reporting.
+-Support for multiple browsers (Chrome, Firefox, Edge).
+-TestNG Listeners for better test reporting and logging.
+-Screenshot functionality on test failures.
+-CI/CD integration with GitLab.
 ## Tools  & Libraries
 - Java
 - Selenium WebDriver
@@ -30,7 +37,7 @@ mvn test
 ## Project components
 - Page objects are in the directory *src/main/java/pages*
 - Test classes are in the the directory *src/test/java/tests*
-- Listener class is in the directory *src/main/java/util*
+- Listener and test data class is in the directory *src/main/java/util*
 
 ## Highlights
 - This framework supports multiple browser
