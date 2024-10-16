@@ -16,7 +16,7 @@
 ## How to run tests
 In terminal:
 ```
-git clone https://github.com/ajkim0418/Java-Selenium-TestNG-Framework.git
+git clone https://github.com/Rabiya-kani/Rabiya-Selenium-TestNG-Framework_NyTimes.git
 ```
 Change directory to the location of cloned project folder and run Maven clean
 ```
