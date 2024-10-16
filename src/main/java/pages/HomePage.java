@@ -51,14 +51,18 @@ public class HomePage extends BasePage {
 	public String getSearchPage() {
 		return driver.findElement(By.xpath("(//p/span)[1]/following-sibling::span")).getText();
 	}
-	public String getTopStoriesText() {
-		driver.findElement(By.xpath("//a[@data-testid='subscribe-button']/span[.='PLAY SPELLING BEE']")).click();
-		return driver.findElement(topStories).getText();
+	public String getTopStoriesText(String tabName) {
+		return driver.findElement(By.xpath("//div[@class='css-10u7rti']//div[@aria-label='"+tabName+" submenu']//div[4]//div[1]//h3[1]")).getText();
 	}
 
-	public String clickSubscribeAndVerifyMessage() {
+	public void clickSubscribe() throws InterruptedException {
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//a[@class='nytcp-opt css-1kj7lfb']//span[@class='css-1ahxtak'][normalize-space()='PLAY SPELLING BEE']")).click();
 		driver.findElement(subscribeButton).click();
-		return driver.findElement(By.xpath("//div[@class='css-s7qm05']/h2")).getText();
+	}
+	public String verifySubscribe() throws InterruptedException {
+		Thread.sleep(5000);
+		return driver.findElement(By.xpath("//h2[@class='css-i3x217']")).getText();
 	}
 
 

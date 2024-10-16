@@ -12,9 +12,7 @@ public class LoginPage {
 	By continueButton = By.xpath("//button[.='Continue']");
 
 	By signInButton = By.id("sign_in");
-	By oculusLogo = By.cssSelector("._2v0_");
-	By errorContainer = By.cssSelector(".bxInputControl.bxInputControl--error");
-	
+
 	WebDriver driver;
 	WebDriverWait wait;
 	
@@ -23,7 +21,7 @@ public class LoginPage {
 		wait = new WebDriverWait(driver, 10);
 	}
 	
-	public void typeUsername(String username) { //pass a parameter so we don't hardcode values in the object class.
+	public void typeUsername(String username) {
 		driver.findElement(usernameField).clear();
 		driver.findElement(usernameField).sendKeys(username);
 	}

@@ -64,28 +64,29 @@ public class HomePageTest extends BasePage{
 
 	}
 
-	@Test
-	public void testTopStories() {
-		logger = report.startTest("testTopStories");
+	@Test(priority=6)
+	public void testTopStoriesForGivenTab() {
+		logger = report.startTest("testTopStoriesForGivenTab");
 		HomePage homePage = new HomePage(driver);
 		logger.log(LogStatus.INFO, "Opened home page");
 		homePage.hoverOverTab("U.S.");
-		String topStories = homePage.getTopStoriesText();
+		String topStories = homePage.getTopStoriesText("U.S.");
 		Assert.assertNotNull(topStories, "Top stories should not be null");
 		logger.log(LogStatus.INFO, "Retrieved top stories: " + topStories);
+		Assert.assertEquals(topStories,"TOP STORIES","given tab not contains Top Stories");
 	}
 
-	@Test
-	public void testSubscribe() {
+	@Test(priority=5)
+	public void testSubscribe() throws InterruptedException {
 		logger = report.startTest("testSubscribe");
 		HomePage homePage = new HomePage(driver);
 		logger.log(LogStatus.INFO, "Opened home page");
 
-		homePage.clickSubscribeAndVerifyMessage();
+		homePage.clickSubscribe();
 		logger.log(LogStatus.INFO, "Clicked subscribe button");
 
 		//assertions to verify subscription success, e.g., checking for confirmation message
-		Assert.assertTrue(homePage.clickSubscribeAndVerifyMessage().contains("Enjoy all of The Times."), "Subscription should be successful");
+		Assert.assertEquals(homePage.verifySubscribe(),"Enjoy all of The Times.", "Subscription should be successful");
 	}
 }
 

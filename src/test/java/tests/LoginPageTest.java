@@ -54,6 +54,5 @@ public class LoginPageTest extends BasePage{
 		logger.log(LogStatus.INFO, "Entering valid password");
 		login.clickSignIn();
 		logger.log(LogStatus.INFO, "Clicking Sign in button");
-//		Assert.assertTrue(login.verifyNewPage());
 	}
 }	
