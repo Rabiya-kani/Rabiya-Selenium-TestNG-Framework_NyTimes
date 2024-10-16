@@ -1,0 +1,33 @@
+stages:
+  - build
+  - test
+
+variables:
+  MAVEN_CACHE: ".m2/repository"
+
+before_script:
+  - apt-get update -y
+  - apt-get install -y openjdk-11-jdk
+  - curl -sSL https://get.docker.com/ | sh
+  - docker run -d -p 4444:4444 --name selenium-hub selenium/hub
+  - docker run -d --link selenium-hub:hub -e "SE_EVENT_BUS_HOST=hub" -e "SE_EVENT_BUS_PORT=4442" selenium/node-chrome
+  - docker run -d --link selenium-hub:hub -e "SE_EVENT_BUS_HOST=hub" -e "SE_EVENT_BUS_PORT=4442" selenium/node-firefox
+
+build:
+  stage: build
+  image: maven:3.8.5-jdk-11
+  script:
+    - mvn clean install
+
+test:
+  stage: test
+  image: maven:3.8.5-jdk-11
+  dependencies:
+    - build
+  script:
+    - mvn test -Dtest=HomePageTest
+  after_script:
+    - docker stop selenium-hub
+    - docker rm selenium-hub
+    - docker stop $(docker ps -q --filter "name=selenium/node-")
+    - docker rm $(docker ps -q --filter "name=selenium/node-")

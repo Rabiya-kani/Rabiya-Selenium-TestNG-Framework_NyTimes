@@ -2,7 +2,6 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage {
@@ -20,7 +19,9 @@ public class LoginPage {
 		this.driver=driver; 
 		wait = new WebDriverWait(driver, 10);
 	}
-	
+	public void clickLoginButton(){
+		driver.findElement(By.xpath("//a[@class='css-1kj7lfb']/span")).click();
+	}
 	public void typeUsername(String username) {
 		driver.findElement(usernameField).clear();
 		driver.findElement(usernameField).sendKeys(username);

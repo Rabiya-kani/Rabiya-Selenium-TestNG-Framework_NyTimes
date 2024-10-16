@@ -24,13 +24,15 @@ public class HomePage extends BasePage {
 	
 	public HomePage(WebDriver driver) {
 		this.driver=driver;
-		wait = new WebDriverWait(driver, 5);
+		wait = new WebDriverWait(driver, 3);
 	}
 	
 	public String getTitle() {
 		return driver.getTitle();
 	}
-	
+	public void openHomePage() {
+		driver.get(url);
+	}
 	public boolean getLogo() {
 		 return driver.findElement(nyLogo).isEnabled();
 	}
@@ -40,8 +42,9 @@ public class HomePage extends BasePage {
 	public void clickLogInLink() {
 		 driver.findElement(signinLink).click();
 	}
-	public void hoverOverTab(String tabName) {
+	public void hoverOverTab(String tabName) throws InterruptedException {
 		new Actions(driver).moveToElement(driver.findElement(By.xpath("//ul[@class='css-17j7fe1']/li/a[.='"+tabName+"']"))).perform();
+		Thread.sleep(5000);
 
 	}public void searchForArticle(String article) {
 		driver.findElement(searchButton).click(); // Click the search button to open the input field
@@ -51,7 +54,8 @@ public class HomePage extends BasePage {
 	public String getSearchPage() {
 		return driver.findElement(By.xpath("(//p/span)[1]/following-sibling::span")).getText();
 	}
-	public String getTopStoriesText(String tabName) {
+	public String getTopStoriesText(String tabName) throws InterruptedException {
+		Thread.sleep(5000);
 		return driver.findElement(By.xpath("//div[@class='css-10u7rti']//div[@aria-label='"+tabName+" submenu']//div[4]//div[1]//h3[1]")).getText();
 	}
 
