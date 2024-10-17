@@ -17,13 +17,13 @@ This project is a Selenium TestNG framework designed for testing the New York Ti
 - Extent Reports and logging
 
 ## Technologies Used
-Framework Type: Data Driven Framework
-Selenium WebDriver: For browser automation.
-TestNG: For organizing and running test cases.
-Maven: For dependency management , Project life cycle and build automation.
-Java: Primary programming language.
-Design Pattern: Page Object Model and Inbuilt Custom annotations.
-HTML, CSS, JavaScript,XML: For web interactions.
+- Framework Type: Data Driven Framework
+- Selenium WebDriver: For browser automation.
+- TestNG: For organizing and running test cases.
+- Maven: For dependency management , Project life cycle and build automation.
+- Java: Primary programming language.
+- Design Pattern: Page Object Model and Inbuilt Custom annotations.
+- HTML, CSS, JavaScript,XML: For web interactions.
 
 ## Prerequisites
 - IDE 
@@ -53,8 +53,8 @@ In Local IDE:
 Execute the tests using TestNG:
 ```
 Right-click on TestSuite.xml.
-Select "Run 'TestSuite.xml'".
-Select "Run 'multipleBrowser.xml'" for run Suite in Different Browser
+- Select "Run 'TestSuite.xml'".
+- Select "Run 'multipleBrowser.xml'" for run Suite in Different Browser
 
 ## Project Structure
 - Page objects are in the directory *src/main/java/pages*
@@ -77,10 +77,10 @@ Select "Run 'multipleBrowser.xml'" for run Suite in Different Browser
 Below mentioned 8 Test cases were covered under 1 Test classes:
 
 1. NYHomePageTest :
-verifyTitle() : This will validate the Title of the home screen.
-verifyLogo()  : This will validate the Logo of the WebApplication
-testLatestNews() : This Test Validate the Latest News on the NY HomePage
-verifyAnyDropdown() : This Test Validate Dropdown Option of Any Section (like U.S, World..)
-testSearchForArticle() : This Test Validate the Searching functionality (like Breaking News, Flash News...)
-testTopStoriesForGivenTab() : This will validate the TopStories Section in Any Tab
-testSubscribe() : This Will validate the subcribe functionality
+- verifyTitle() : This will validate the Title of the home screen.
+- verifyLogo()  : This will validate the Logo of the WebApplication
+- testLatestNews() : This Test Validate the Latest News on the NY HomePage
+- verifyAnyDropdown() : This Test Validate Dropdown Option of Any Section (like U.S, World..)
+- testSearchForArticle() : This Test Validate the Searching functionality (like Breaking News, Flash News...)
+- testTopStoriesForGivenTab() : This will validate the TopStories Section in Any Tab
+- testSubscribe() : This Will validate the subcribe functionality
