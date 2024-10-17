@@ -2,12 +2,12 @@
 **Overview**
 This project is a Selenium TestNG framework designed for testing the New York Times website. It includes:
 
-**-ExtentReports for detailed test reporting.
--Support for multiple browsers (Chrome, Firefox, Edge).
--TestNG Listeners for better test reporting and logging.
--Screenshot functionality on test failures.
--CI/CD integration with GitLab.
--Support Data Driven Framework**
+- ExtentReports for detailed test reporting.
+- Support for multiple browsers (Chrome, Firefox, Edge).
+- TestNG Listeners for better test reporting and logging.
+- Screenshot functionality on test failures.
+- CI/CD integration with GitLab.
+- Support Data Driven Framework
 
 ## Tools  & Libraries
 - Java
