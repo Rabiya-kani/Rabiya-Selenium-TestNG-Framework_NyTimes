@@ -74,7 +74,7 @@ Right-click on TestSuite.xml.
 - Extent reporting and logging: After the test finishes, a visual report is generated for all the executed test cases from the suite. This report can be found in the 'report' folder
 
 ## Test Cases Overview
-Below mentioned 8 Test cases were covered under 1 Test classes:
+Below mentioned 7 Test cases were covered under 1 Test classes:
 
 1. NYHomePageTest :
 - verifyTitle() : This will validate the Title of the home screen.
