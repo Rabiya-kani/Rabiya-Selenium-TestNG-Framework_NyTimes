@@ -90,7 +90,7 @@
                     <version>2.22.1</version>
                     <configuration>
                         <suiteXmlFiles>
-                            <suiteXmlFile>SmokeTestSuite.xml</suiteXmlFile>
+                            <suiteXmlFile>TestSuite.xml</suiteXmlFile>
                         </suiteXmlFiles>
                     </configuration>
                 </plugin>
