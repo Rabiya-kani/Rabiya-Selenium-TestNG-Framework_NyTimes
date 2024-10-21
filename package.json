@@ -4,7 +4,7 @@
   "description": "**Overview**\r This project is a Selenium TestNG framework designed for testing the New York Times website. It includes:",
   "main": "index.js",
   "scripts": {
-    "test": "HomePageTest.java"
+    "test": "mvn test"
   },
   "keywords": [],
   "author": "",
