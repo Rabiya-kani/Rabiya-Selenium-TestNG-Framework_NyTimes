@@ -28,7 +28,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: install and run tests with Maven
-      run: mvn clean install --file pom.xml
+      run: mvn test
     - uses: actions/upload-artifact@v3
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
