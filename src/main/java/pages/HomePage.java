@@ -1,12 +1,8 @@
 package pages;
 
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage extends BasePage {
@@ -18,6 +14,7 @@ public class HomePage extends BasePage {
 	private By searchInput = By.xpath("//input[@placeholder='SEARCH']");
 	private By topStories = By.xpath(".top-stories");
 	private By subscribeButton = By.xpath("//div[@id='js-nav-actions']/a[.='Subscribe']");
+	private By dateElement = By.xpath("//span[@data-testid='todays-date']");
 
 	WebDriver driver;
 	WebDriverWait wait;
@@ -68,6 +65,9 @@ public class HomePage extends BasePage {
 		Thread.sleep(5000);
 		return driver.findElement(By.xpath("//h2[@class='css-i3x217']")).getText();
 	}
-
+	public String getTodayDate() {
+		String appearingDate = driver.findElement(dateElement).getText();
+		return appearingDate;
+	}
 
 }

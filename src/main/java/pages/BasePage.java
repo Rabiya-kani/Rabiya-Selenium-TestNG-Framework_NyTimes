@@ -1,20 +1,16 @@
 package pages;
 
-import org.openqa.selenium.*;
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import io.github.bonigarcia.wdm.WebDriverManager;
-
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
 
 import java.io.File;
 import java.io.IOException;
@@ -44,7 +40,7 @@ public class BasePage {
 		context.setAttribute("WebDriver", driver);
 		// Initialize ExtentReports
 		report = new ExtentReports("./report/Tests_Results.html", true);
-		driver.findElement(By.xpath("//div[@class='css-hqisq1']//button")).click();
+		//driver.findElement(By.xpath("//div[@class='css-hqisq1']//button")).click();
 	}
 
 	@AfterClass(alwaysRun = true)

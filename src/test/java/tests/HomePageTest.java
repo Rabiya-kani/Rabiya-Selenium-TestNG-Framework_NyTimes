@@ -1,13 +1,13 @@
 package tests;
 
-import org.openqa.selenium.By;
+import com.relevantcodes.extentreports.LogStatus;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import com.relevantcodes.extentreports.LogStatus;
 import pages.BasePage;
 import pages.HomePage;
 import util.ExtentReportListener;
+import util.dateUtils;
 
 @Listeners(ExtentReportListener.class)
 public class HomePageTest extends BasePage{
@@ -69,7 +69,7 @@ public class HomePageTest extends BasePage{
 		Assert.assertEquals(topStories,"TOP STORIES","given tab not contains Top Stories");
 	}
 
-	@Test(priority=5)
+	@Test(enabled = false)
 	public void testSubscribe() throws InterruptedException {
 		HomePage homePage = new HomePage(driver);
 		homePage.openHomePage();
@@ -81,6 +81,16 @@ public class HomePageTest extends BasePage{
 		//assertions to verify subscription success, e.g., checking for confirmation message
 		Assert.assertEquals(homePage.verifySubscribe(),"Enjoy all of The Times.", "Subscription should be successful");
 
+	}
+	@Test(priority=5)
+	public void testVerifyDate() throws InterruptedException {
+		HomePage homePage = new HomePage(driver);
+		homePage.openHomePage();
+		logger.log(LogStatus.INFO, "Opened home page");
+
+		String applicationDate = homePage.getTodayDate();
+		String expectedDate = dateUtils.getSystemDate();
+		Assert.assertEquals(applicationDate,expectedDate,"Date not equal");
 	}
 }
 

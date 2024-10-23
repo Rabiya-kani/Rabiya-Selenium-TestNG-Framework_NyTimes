@@ -66,7 +66,7 @@ Right-click on TestSuite.xml.
 - multipleBrowser.xml: TestNG Suite Execution in Different Browser
 - Results : report/Tests_Results.html
 - Failed TCs SCreenshot : screenshots/testLogin.png
-- .gitlab-ci.yml : CI/CD Configurations
+- maven.yml : CI with maven Configurations
 
 ## Highlights
 - **This framework supports multiple browser**
@@ -84,3 +84,4 @@ Below mentioned 7 Test cases were covered under 1 Test classes:
 - testSearchForArticle() : This Test Validate the Searching functionality (like Breaking News, Flash News...)
 - testTopStoriesForGivenTab() : This will validate the TopStories Section in Any Tab
 - testSubscribe() : This Will validate the subcribe functionality
+- testVerifyDate(): It verify the page date and system date
